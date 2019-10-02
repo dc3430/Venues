@@ -16,14 +16,14 @@ You will need to login to the Website, once you have created an account you will
 
 
 ![ERD](https://i.imgur.com/p2Gf5Da.jpg)
-
+---
 ![WireFrame](https://i.imgur.com/CePbFc3.jpg)
-
-![TrelloBoard](https://trello.com/b/foPvTfB7/venues)
-
+---
+![TrelloBoard](https://i.imgur.com/ibc51Yo.jpg)
+---
 # Unsolved Problems 
 
-
+---
 # Future Enchancements
 API on Google maps to give you directions on how to get to the venue.
 
