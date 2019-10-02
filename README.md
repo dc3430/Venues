@@ -9,6 +9,7 @@ You will need to login to the Website, once you have created an account you will
 
 # Technology Used
 - HTML, CSS,
+- React
 - MongoDB
 - Material-UI
 - Node.JS
