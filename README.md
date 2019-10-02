@@ -1,5 +1,5 @@
 # Venues
- An App to halp you find wedding Venues
+ An App to help you find wedding Venues for your special Day!
 
 # Intro
 As we are planning our wedding, the main thing I notice when searching for wedding venues google would populate individual links for each venue. I wanted to provide you with a single location to search for wedding venues. That is how the idea for my app came about. I want to make finding wedding venues easy and along with being able to add venues. 
