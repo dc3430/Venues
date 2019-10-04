@@ -5,12 +5,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <h1>Venues under construction!</h1>
         <p>
-          
+          This is the start of your last project!
         </p>
-        <a>
-        </a>
+
       </header>
     </div>
   );
