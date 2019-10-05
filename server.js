@@ -5,6 +5,12 @@ const logger = require('morgan');
 
 const app = express();
 
+require('dotenv').config();
+require('./config/database');
+
+// Put API routes here, before the "catch all" route
+app.use('/api/users', require('./routes/api/users'));
+
 app.use(logger('dev'));
 app.use(express.json());
 
