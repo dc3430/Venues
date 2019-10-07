@@ -4,15 +4,52 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
+import NavBar from '../../componets/Navbar/NavBar';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      user: userService.getUser()
+    };
+  }
+
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null});
+  };
+
+  handleSignupOrLogin = () => {
+    this.setState({user: userService.getUser()});
+  };
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Venues under construction!</h1>
-          <p>This is the start of your last project</p>
-        </header>
+      <div>
+        <header className='header-footer'>Venues</header>
+        <Switch>
+          <Route exact path='/' render={() =>
+            <NavBar 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
+          }/>
+          <Route exact path='/signup' render={({ history }) => 
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+              />
+            }/>
+          <Route exact path='/login' render={({history}) => 
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+              {/* :
+              <Redirect to='/login' /> */}
+          }/>
+        </Switch>
       </div>
     );
   }

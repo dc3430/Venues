@@ -10,6 +10,7 @@ function signup(user) {
     body: JSON.stringify(user)
   })
   .then(res => {
+    console.log(res)
     if (res.ok) return res.json();
     // Probably a duplicate email
     throw new Error('Email already taken!');
@@ -32,6 +33,7 @@ function login(creds) {
     body: JSON.stringify(creds)
   })
   .then(res => {
+    console.log(res)
     // Valid login if we have a status of 2xx (res.ok)
     if (res.ok) return res.json();
     throw new Error('Bad Credentials!');
