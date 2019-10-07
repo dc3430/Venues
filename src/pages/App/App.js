@@ -46,8 +46,8 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
-              {/* :
-              <Redirect to='/login' /> */}
+              :
+              <Redirect to='/login' />
           }/>
         </Switch>
       </div>
