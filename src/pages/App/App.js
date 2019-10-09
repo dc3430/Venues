@@ -4,7 +4,9 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import NavBar from '../../componets/Navbar/NavBar';
+import NavBar from '../../components/Navbar/NavBar';
+import HomePage from '../HomePage/HomePage';
+import CreateVenuePage from '../CreateVenuePage/CreateVenuePage'
 
 class App extends Component {
   constructor() {
@@ -26,8 +28,38 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className='header-footer'>Venues</header>
+        <header className='header'>Venues</header>
         <Switch>
+        <Route exact path='/venue' render={props => (
+          <div>
+            <NavBar
+              user={this.state.user}
+              handleLogout={this.handleLogout} 
+            />
+              <CreateVenuePage
+                  {...props}
+                  user={this.state.user}
+                  handleLogOut={this.handleLogOut}
+              />
+          </div>
+              ) 
+          }/>
+        <Route exact path='/' render={props => (
+          <div>
+            <NavBar
+              user={this.state.user}
+              handleLogout={this.handleLogout} 
+            />
+              <HomePage
+                  {...props}
+                  user={this.state.user}
+                  handleLogOut={this.handleLogOut}
+              />
+          </div>
+              ) 
+          }/>
+
+
           <Route exact path='/' render={() =>
             <NavBar 
               user={this.state.user}

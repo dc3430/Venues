@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const eventRouter = require('./routes/api/events')
+const eventRouter = require('./routes/api/venue')
 
 require('dotenv').config();
 

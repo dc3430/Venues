@@ -1,12 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
+import HomePage from '../../pages/HomePage/HomePage';
+import CreateVenuePage from '../../pages/CreateVenuePage/CreateVenuePage'
 
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
+      <Link to ='/editPage'>Edit</Link>
+      &nbsp;&nbsp;
+      <Link to ='/showPage'>Show</Link>
+      &nbsp;&nbsp;
+      <Link to='/homePage'>Home</Link>
+      &nbsp;&nbsp;
+      <Link to='/venue'>Create Venue</Link>
+      &nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
-
+      &nbsp;&nbsp;
+      <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
     </div>
     :
     <div>
