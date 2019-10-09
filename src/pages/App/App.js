@@ -6,7 +6,10 @@ import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
 import NavBar from '../../components/Navbar/NavBar';
 import HomePage from '../HomePage/HomePage';
-import CreateVenuePage from '../CreateVenuePage/CreateVenuePage'
+import CreateVenuePage from '../CreateVenuePage/CreateVenuePage';
+import EditVenuePage from '../EditVenuePage/EditVenuePage';
+import AboutVenuePage from '../AboutVenuePage/AboutVenuePage'
+
 
 class App extends Component {
   constructor() {
@@ -44,13 +47,41 @@ class App extends Component {
           </div>
               ) 
           }/>
-        <Route exact path='/' render={props => (
+        <Route exact path='/homePage' render={props => (
           <div>
             <NavBar
               user={this.state.user}
               handleLogout={this.handleLogout} 
             />
               <HomePage
+                  {...props}
+                  user={this.state.user}
+                  handleLogOut={this.handleLogOut}
+              />
+          </div>
+              ) 
+          }/>
+        <Route exact path='/editPage' render={props => (
+          <div>
+            <NavBar
+              user={this.state.user}
+              handleLogout={this.handleLogout} 
+            />
+              <editPage
+                  {...props}
+                  user={this.state.user}
+                  handleLogOut={this.handleLogOut}
+              />
+          </div>
+              ) 
+          }/>
+        <Route exact path='/aboutPage' render={props => (
+          <div>
+            <NavBar
+              user={this.state.user}
+              handleLogout={this.handleLogout} 
+            />
+              <aboutPage
                   {...props}
                   user={this.state.user}
                   handleLogOut={this.handleLogOut}

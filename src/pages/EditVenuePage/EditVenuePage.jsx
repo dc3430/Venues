@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getOneVenue, updateVenue } from '../../services/api';
+import { Link } from 'react-router-dom';
 
 class EditVenuePage extends Component {
     constructor(props) {
@@ -36,7 +37,7 @@ class EditVenuePage extends Component {
         const venueId = this.props.match.params.id;
         const self = this;
 
-        getOnevenue(venueId).then(function(venue) {
+        getOneVenue(venueId).then(function(venue) {
             self.setState({
                 _id: venue._id,
                 name: venue.name,

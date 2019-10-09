@@ -1,6 +1,6 @@
 // create
 export function createVenue(venue) {
-    return fetch(`/api/venues`, {
+    return fetch(`/api/venues/`, {
         method: 'POST',
         body: JSON.stringify({
             userId: venue.userId,

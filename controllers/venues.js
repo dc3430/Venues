@@ -9,16 +9,8 @@ module.exports = {
 };
 
 function createVenue(req, res) {
-    let venue = new Venue({
-        venueType: req.body.venueType,
-        date: req.body.date,
-        note: req.body.note,
-        userId: req.body.userId,
-        venueId: req.body.venueId,
-    });
-
-    venue.save();
-    res.status(200).json(venue);
+    const venue = Venue.create(req.body);
+    res.status(201).json(venue);
 }
 
 function updateVenue(req, res) {
