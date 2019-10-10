@@ -1,25 +1,19 @@
-// create
+import tokenService from '../utils/tokenService';
+
+
 export function createVenue(venue) {
-    return fetch(`/api/venues/`, {
+    return fetch(`/api/venues/venue`, {
         method: 'POST',
-        body: JSON.stringify({
-            userId: venue.userId,
-            name: venue.name,
-            location: venue.location,
-            style: venue.style,
-            budget: venue.budget,
-            ratingLevel: venue.ratingLevel,
-            note: venue.note,
-            imageUrl: venue.imageUrl,
-        }),
+        body: JSON.stringify(venue),
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'Authorization': "Bearer " + tokenService.getToken()
         }
     })
 }
 
 export function updateVenue(venue) {
-    return fetch(`/api/venues/${venue._id}`, {
+    return fetch(`/api/venues/venue/${venue._id}`, {
         method: 'PUT',
         body: JSON.stringify({
             userId: venue.userId,
@@ -38,7 +32,7 @@ export function updateVenue(venue) {
 }
 
 export function deleteVenue(id) {
-    return fetch(`/api/venues/${id}`, {
+    return fetch(`/api/venues/venue${id}`, {
         method: 'delete'
     }).then(function (res) {
         return res.json()
@@ -46,14 +40,14 @@ export function deleteVenue(id) {
 }
 
 export function getAllVenues() {
-    return fetch(`/api/venues`).then(function (res) {
+    return fetch(`/api/venues/venue`).then(function (res) {
         return res.json();
     })
 }
 
 // home or index
 export function getOneVenue(venueId) {
-    return fetch(`/api/venue/${venueId}`).then(function (res) {
+    return fetch(`/api/venue/venue${venueId}`).then(function (res) {
         return res.json();
     })
 }

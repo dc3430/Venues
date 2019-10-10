@@ -7,10 +7,7 @@ import CreateVenuePage from '../../pages/CreateVenuePage/CreateVenuePage'
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      <Link to ='/editPage'>Edit</Link>
-      &nbsp;&nbsp;
-      <Link to ='/aboutPage'>About</Link>
-      &nbsp;&nbsp;
+
       <Link to='/homePage'>Home</Link>
       &nbsp;&nbsp;
       <Link to='/venue'>Create Venue</Link>

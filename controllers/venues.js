@@ -6,6 +6,8 @@ module.exports = {
     deleteVenue,
     getAllVenues,
     getOneVenue,
+    editVenue,
+    showVenue,
 };
 
 function createVenue(req, res) {
@@ -30,13 +32,25 @@ function deleteVenue(req, res) {
 }
 
 function getAllVenues(req, res) {
-    Venue.find({ venueId: req.params.id, deletedAt: null }).then(function (venues) {
-        res.status(200).json(venues);
+    venue.find({}).then(function(venue) {
+        res.status(200).json(venue);
     });
 }
 
 function getOneVenue(req, res) {
     Venue.findOne({ _id: req.body.venueId}).then(function (err, venue) {
+        res.status(200).json(venue);
+    });
+}
+
+function editVenue(req, res) {
+    Venue.findByIdAndUpdate(req.params.id, req.body, {new: true}).then(function(venue) {
+      res.status(200).json(venue);
+    });
+  }
+
+function showVenue(req, res) {
+    Venue.findById(req.params.id).then(function(venue) {
         res.status(200).json(venue);
     });
 }

@@ -1,11 +1,16 @@
 var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-var venueSchema = new mongoose.Schema({
+var venueSchema = new Schema({
     name: String,
     location: String,
     style: String,
-    budget: Number,
-    ratinglevel: String,    
+    budget: {
+        type: Number,
+        default: 6,
+    },
+    ratinglevel: String,
+    note: String,    
 }, {
     timestamps: true
 });

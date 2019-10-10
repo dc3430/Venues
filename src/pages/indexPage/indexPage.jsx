@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { getOneVenue, updateVenue } from '../../services/api';
 import { Link } from 'react-router-dom';
 
-class EditVenuePage extends Component {
+class EditPage extends Component {
     constructor(props) {
         super(props);
         this.goBack = this.goBack.bind(this)
@@ -135,4 +135,4 @@ class EditVenuePage extends Component {
     }
 }
 
-export default EditVenuePage;
+export default EditPage;

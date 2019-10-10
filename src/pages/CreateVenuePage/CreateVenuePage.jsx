@@ -8,11 +8,12 @@ class CreateVenuePage extends Component {
         super(props);
         this.state = {
             userId: this.props.user._id,
-            name: 'Country Club',
-            location: 'Dallas',
-            style: 'Formal',
-            budget: '$3,000.00',
-            ratingLevel: '5'
+            name: '',
+            location: '',
+            style: '',
+            budget: '',
+            ratingLevel: '',
+            notes: ''
         };
     }
 
@@ -116,17 +117,6 @@ class CreateVenuePage extends Component {
                             <option value="4">4</option>
                             <option value="5">5</option>
                         </select>
-                    </div>
-                </div>
-                <div className="form-group">
-                    <div className="col-sm-12">
-                        <span>Image URL</span>
-                        <input
-                            type="text"
-                            className="form-control"
-                            name="imageUrl"
-                            onChange={this.handleChange}
-                        />
                     </div>
                 </div>
                 <div className="form-group">
