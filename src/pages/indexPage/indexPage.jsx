@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getAllVenues, deleteOne } from '../../services/api';
 import { Link } from 'react-router-dom';
-import ('./IndexPage.module.css');
+import './IndexPage.css';
 
 
 class IndexPage extends Component {
@@ -27,8 +27,8 @@ class IndexPage extends Component {
     render() {
         const { venue } = this.state
         return (    
-            
-            <div className="VenueListPage-grid">
+        <div className='index-page'>
+            <div className="index-page-venue">
                 {venue && venue.map((v, i)=> (
                     <React.Fragment key={i} >
                         <h5>{v.name}</h5>
@@ -43,7 +43,7 @@ class IndexPage extends Component {
                     </React.Fragment>
                 ))}
             </div>
-            
+        </div> 
 
         
         )

@@ -1,0 +1,43 @@
+
+.index-page {
+    background-color: rgb(222, 13, 13);
+    height: 500vh;
+    width: 100vw; 
+    /* position: fixed; */
+    font-family: "Times New Roman", Times, serif;
+}
+
+.index-page-venue {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 5px solid rgb(3, 247, 24);
+    padding: 20px;
+    border-radius: 25px;
+   
+    
+    
+}
+
+
+h5 {
+    color: rgb(3, 247, 24);
+    word-wrap: break-word;
+    width: 450px;
+    font-size: 20px;
+}
+
+
+button {
+    border: 2px solid #ff073a;
+    color: rgb(3, 247, 24);
+    background-color: black;
+    font-size: 16px;
+    outline: none;
+    text-transform: uppercase;
+}
+
+span {
+    color: rgb(3, 247, 24);
+}

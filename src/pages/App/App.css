@@ -14,7 +14,16 @@
   align-items: center;
   justify-content: center;
   font-size: 15px;
-  color: white;
+  color: rgb(222, 13, 13);
 }
 
+.header.header {
+  background-color: rgb(222, 13, 13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(3, 247, 24);
+  font-size: 30px;
+}
 

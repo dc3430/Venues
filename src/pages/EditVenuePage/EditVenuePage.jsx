@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { getOneVenue, updateVenue,  } from '../../services/api';
+import './EditVenuePage.css';
 
 class EditVenuePage extends Component {
     constructor(props) {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { createVenue } from '../../services/api';
 import { Link } from 'react-router-dom';
+import './CreateVenuePage.css';
 
 
 class CreateVenuePage extends Component {
