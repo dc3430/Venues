@@ -8,7 +8,7 @@ import NavBar from '../../components/Navbar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import CreateVenuePage from '../CreateVenuePage/CreateVenuePage';
 import EditVenuePage from '../EditVenuePage/EditVenuePage';
-import IndexPage from '../IndexPage/IndexPage';
+import IndexPage from '../IndexPage/LandingPage';
 
 
 class App extends Component {
