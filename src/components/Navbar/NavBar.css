@@ -7,13 +7,13 @@
   
 .NavBar-link {
   margin: 0 10px;
-  color: blue;
+  color: rgb(3, 247, 24);
   background: rgb(222, 13, 13);
 }
   
 .NavBar-welcome {
   text-transform: lowercase;
-  color: rgb(3, 31, 247);
+  color: rgb(3, 247, 24);
   text-align: center;
   background: rgb(222, 13, 13);
 }

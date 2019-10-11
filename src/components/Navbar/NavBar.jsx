@@ -7,11 +7,11 @@ import CreateVenuePage from '../../pages/CreateVenuePage/CreateVenuePage'
 const NavBar = (props) => {
   let nav = props.user ?
     <div className="NavBar-A">
-      <Link to='/IndexPage'>Index</Link>
+      <Link to='/IndexPage' className='NavBar-link'>Index</Link>
       &nbsp;&nbsp;
-      <Link to='/HomePage'>Home</Link>
+      <Link to='/HomePage' className='NavBar-link'>Home</Link>
       &nbsp;&nbsp;
-      <Link to='/venue'>Create Venue</Link>
+      <Link to='/venue' className='NavBar-link'>Create Venue</Link>
       &nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
       &nbsp;&nbsp;
