@@ -26,10 +26,17 @@ You will need to login to the Website, once you have created an account you will
 ![TrelloBoard](https://i.imgur.com/ibc51Yo.jpg)
 ---
 # Unsolved Problems 
-This project!
+The delete not propely working!
 ---
 # Future Enchancements
-API on Google maps to give you directions on how to get to the venue.
+1. API on Google maps to give you directions on how to get to the venue.
+2. Redesign of the website so you search for website in your locate area.
+3. Upload photo's of you're choosing.
+
+![imgur](https://i.imgur.com/sj6C11E.jpg)
+![imgur](https://i.imgur.com/B9UBIXA.jpg)
+![imgur](https://i.imgur.com/aMnrORT.jpg)
+![imgur](https://i.imgur.com/tiK2T6T.jpg)
 
 
 
