@@ -1,0 +1,33 @@
+.CreateVenuePage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(3, 247, 24);
+  padding: 10px;
+  margin: 5px;
+  border-radius: 50px;
+  min-height: 20px;
+  width: 40vmin;
+  color: rgb(3, 247, 24);
+  font-size: 20px;
+  font-family: "Times New Roman", Times, serif;
+  
+}
+
+.form-horizontal {
+  background-color: rgb(222, 13, 13);
+  height: 100vmin;
+  align-items: center;
+}
+
+.Link {
+  color: darkred;
+}

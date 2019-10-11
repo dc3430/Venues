@@ -1,0 +1,32 @@
+.NavBar {
+  display: flex;
+  justify-content: center;
+  /* margin: 0 40px; */
+  background: rgb(222, 13, 13);
+}
+  
+.NavBar-link {
+  margin: 0 10px;
+  color: rgb(3, 247, 24);
+  background: rgb(222, 13, 13);
+}
+  
+.NavBar-welcome {
+  text-transform: lowercase;
+  color: rgb(3, 247, 24);
+  text-align: center;
+  background: rgb(222, 13, 13);
+}
+
+
+
+.NavBar-A {
+  background: rgb(222, 13, 13);
+}
+
+.NavBar-B {
+  background: rgb(222, 13, 13);
+}
+  
+
+  
