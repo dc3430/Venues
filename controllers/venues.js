@@ -3,7 +3,7 @@ const Venue = require('../models/venue');
 module.exports = {
     createVenue,
     updateVenue,
-    deleteVenue,
+    deleteOne,
     getAllVenues,
     getOneVenue,
     editVenue,
@@ -16,14 +16,17 @@ function createVenue(req, res) {
 }
 
 function updateVenue(req, res) {
-    Venue.findOne({ _id: req.body.id, deletedAt: null }).exec(function (err, venue) {
-        venue.note = req.body.note
-        venue.save();
-        res.status(200).json(venue);
+    Venue.findByIdAndUpdate(req.params.id, req.body, { new: true }, function (err, venue) {
+        if(err) {
+            console.log(err)
+            res.status(500).json(err)
+        } else {
+            res.status(200).json(venue);
+        }
     });
 }
 
-function deleteVenue(req, res) {
+function deleteOne(req, res) {
     Venue.findOne({ _id: req.body.venueId, deletedAt: null }).then(function (err, venue) {
         venue.deletedAt = new Date();
         venue.save();
@@ -31,15 +34,28 @@ function deleteVenue(req, res) {
     });
 }
 
+// async function deleteOne(req, res) {
+//     const deletedVenue = await Venue.findByIdAndRemove(req.params.id);
+//     res.status(200).json(deletedVenue);
+// }
+
 function getAllVenues(req, res) {
-    venue.find({}).then(function(venue) {
-        res.status(200).json(venue);
-    });
+    try {
+        Venue.find({}).then(function(venue) {
+            res.status(200).json(venue);
+        });
+    } catch (err) {
+        console.log(err)
+    }
 }
 
 function getOneVenue(req, res) {
-    Venue.findOne({ _id: req.body.venueId}).then(function (err, venue) {
-        res.status(200).json(venue);
+    Venue.findById(req.params.id)
+    .then(function (venue){
+        res.status(200).json(venue)
+    })
+    .catch(err => {
+        res.status(500).json({"message": "something went wrong"})
     });
 }
 

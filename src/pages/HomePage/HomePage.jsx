@@ -3,7 +3,9 @@ import Venues from '../../components/Venues/Venues';
 
 const HomePage = (props) => {
     return (
-        <Venues />
+        <div>
+            Test
+        </div>
     );
 }
   

@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const VenueRouter = require('./routes/api/venue')
+const VenuesRouter = require('./routes/api/venues')
 const cors = require('cors')
 
 require('dotenv').config();
@@ -14,11 +14,11 @@ require('./config/database');
 app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
-app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, 'build')));
 // Put API routes here, before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/venues', require('./routes/api/venues'))
+app.use('/api/venue', require('./routes/api/venues'))
 // app.use('/api/events', require('./routes/api/events));
 
 

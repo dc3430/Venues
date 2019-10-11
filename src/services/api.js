@@ -2,7 +2,7 @@ import tokenService from '../utils/tokenService';
 
 
 export function createVenue(venue) {
-    return fetch(`/api/venues/venue`, {
+    return fetch(`/api/venue`, {
         method: 'POST',
         body: JSON.stringify(venue),
         headers: {
@@ -13,41 +13,60 @@ export function createVenue(venue) {
 }
 
 export function updateVenue(venue) {
-    return fetch(`/api/venues/venue/${venue._id}`, {
+    delete venue.userId
+    console.log(venue)
+    return fetch(`/api/venue/${venue._id}`, {
         method: 'PUT',
-        body: JSON.stringify({
-            userId: venue.userId,
-            name: venue.name,
-            location: venue.location,
-            style: venue.style,
-            budget: venue.budget,
-            ratingLevel: venue.ratingLevel,
-            note: venue.note,
-            imageUrl: venue.imageUrl,
-        }),
+        body: JSON.stringify(venue),
         headers: {
             'content-type': 'application/json'
         }
     })
+    .then(res => {
+        console.log(res)
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+        return data
+    })
 }
 
-export function deleteVenue(id) {
-    return fetch(`/api/venues/venue${id}`, {
+export function deleteOne(id) {
+    return fetch(`/api/venue${id}`, {
         method: 'delete'
     }).then(function (res) {
         return res.json()
     });
 }
 
+// export function deleteOne(id) {
+//     return fetch(`/api/venue${id}`, {
+//       method: 'DELETE'
+//     }).then(res => res.json());
+// }
+
 export function getAllVenues() {
-    return fetch(`/api/venues/venue`).then(function (res) {
-        return res.json();
+    return fetch(`/api/venue`)
+    .then(res => {
+        console.log(res)
+        return res.json()
+    })
+    .then(data => {
+        console.log(data)
+        return data
     })
 }
 
 // home or index
 export function getOneVenue(venueId) {
-    return fetch(`/api/venue/venue${venueId}`).then(function (res) {
-        return res.json();
+    return fetch(`/api/venue/${venueId}`)
+    .then((res) => {
+        console.log(res)
+        return res.json()
+    })
+    .then((data) => {
+        console.log(data)
+        return data
     })
 }

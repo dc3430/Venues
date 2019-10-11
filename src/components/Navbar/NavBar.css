@@ -12,6 +12,7 @@
 .NavBar-welcome {
   text-transform: lowercase;
   color: rgb(3, 31, 247);
+  text-align: center;
 }
 
 .NavBar {

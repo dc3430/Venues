@@ -33,7 +33,7 @@ class CreateVenuePage extends Component {
 
         const self = this;
         createVenue(this.state).then(function() {
-            self.props.history.push(`/index`);
+            self.props.history.push(`/IndexPage`);
         });
     };
 

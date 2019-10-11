@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { getOneVenue, updateVenue } from '../../services/api';
-import { Link } from 'react-router-dom';
+import { getOneVenue, updateVenue,  } from '../../services/api';
 
 class EditVenuePage extends Component {
     constructor(props) {
@@ -8,6 +7,13 @@ class EditVenuePage extends Component {
         this.goBack = this.goBack.bind(this)
         this.state = {
             userId: this.props.user._id,
+            style: "",
+            location: "",
+            ratinglevel: "",
+            budget: "",
+            note: "",
+            name: "",
+            _id: ""
         };
     }
 
@@ -16,20 +22,15 @@ class EditVenuePage extends Component {
         const value = e.target.value;
 
         this.setState({
-            [name]: value,
+            [name]: value
         });
-    };
-
-
-    updateMessage = msg => {
-        this.setState({ message: msg });
     };
 
     handleSubmit = e => {
         const self = this;
         e.preventDefault();
         updateVenue(this.state).then(function() {
-            self.props.history.push(`/venues/${self.props.match.params.id}`)
+            self.props.history.push(`/indexPage`)
         });
     };
 
@@ -37,16 +38,20 @@ class EditVenuePage extends Component {
         const venueId = this.props.match.params.id;
         const self = this;
 
-        getOneVenue(venueId).then(function(venue) {
-            self.setState({
-                _id: venue._id,
-                name: venue.name,
-                location: venue.location,
-                style: venue.style,
-                budget: venue.budget,
-                ratinglevel: venue.ratinglevel,
-                note: venue.note,
-            });
+        getOneVenue(this.props.match.params.id).then(function({
+            style, location, ratinglevel, budget, note, name, _id
+        }) {
+           self.setState(() => {
+               return {
+                   style,
+                   location,
+                   ratinglevel,
+                   budget,
+                   note,
+                   name,
+                   _id
+               }
+           })
         });
     }
 
@@ -88,7 +93,7 @@ class EditVenuePage extends Component {
                             type="text"
                             className="form-control"
                             name="style"
-                            value=""
+                            value={this.state.style}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -100,7 +105,7 @@ class EditVenuePage extends Component {
                             type="text"
                             className="form-control"
                             name="budget"
-                            value=""
+                            value={this.state.budget}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -112,7 +117,7 @@ class EditVenuePage extends Component {
                             type="text"
                             className="form-control"
                             name="ratinglevel"
-                            value=""
+                            value={this.state.ratinglevel}
                             onChange={this.handleChange}
                         />
                     </div>
@@ -120,7 +125,7 @@ class EditVenuePage extends Component {
                 <div className="form-group">
                     <div className="col-sm-12">
                         <span>Note</span>
-                        <textarea className="form-control" name="note" onChange={this.handleChange} />
+                        <textarea value={this.state.note} className="form-control" name="note" onChange={this.handleChange} />
                     </div>
                 </div>
                 <div className="form-group">

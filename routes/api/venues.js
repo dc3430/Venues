@@ -3,13 +3,13 @@ const router = express.Router();
 const venuesCtrl = require('../../controllers/venues');
 
 
-// router.get('/venue', venuesCtrl.getAllVenues)
-// router.get('/venue/:id', venuesCtrl.getOneVenue);
+router.get('/', venuesCtrl.getAllVenues);
+router.post('/', venuesCtrl.createVenue);
+router.get('/:id', venuesCtrl.getOneVenue);
 
-router.post('/venue', venuesCtrl.createVenue)
-// router.put('/venue/:id', venuesCtrl.updateVenue)
-// router.delete('/venue/:id', venuesCtrl.deleteVenue)
-// router.get('/venue/:id/edit', venueController.editVenue)
+router.put('/:id', venuesCtrl.updateVenue);
+router.delete('/:id', venuesCtrl.deleteOne);
+router.put('/:id/edit', venuesCtrl.editVenue);
 
 module.exports = router;
 

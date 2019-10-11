@@ -8,7 +8,7 @@ import NavBar from '../../components/Navbar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import CreateVenuePage from '../CreateVenuePage/CreateVenuePage';
 import EditVenuePage from '../EditVenuePage/EditVenuePage';
-import AboutVenuePage from '../AboutVenuePage/AboutVenuePage'
+import IndexPage from '../IndexPage/IndexPage';
 
 
 class App extends Component {
@@ -61,13 +61,13 @@ class App extends Component {
           </div>
               ) 
           }/>
-        <Route exact path='/editPage' render={props => (
+        <Route exact path='/editPage/:id' render={props => (
           <div>
             <NavBar
               user={this.state.user}
               handleLogout={this.handleLogout} 
             />
-              <editPage
+              <EditVenuePage
                   {...props}
                   user={this.state.user}
                   handleLogOut={this.handleLogOut}
@@ -75,13 +75,13 @@ class App extends Component {
           </div>
               ) 
           }/>
-        <Route exact path='/aboutPage' render={props => (
+        <Route exact path='/IndexPage' render={props => (
           <div>
             <NavBar
               user={this.state.user}
               handleLogout={this.handleLogout} 
             />
-              <aboutPage
+              <IndexPage
                   {...props}
                   user={this.state.user}
                   handleLogOut={this.handleLogOut}

@@ -5,10 +5,7 @@ var venueSchema = new Schema({
     name: String,
     location: String,
     style: String,
-    budget: {
-        type: Number,
-        default: 6,
-    },
+    budget: String,
     ratinglevel: String,
     note: String,    
 }, {
