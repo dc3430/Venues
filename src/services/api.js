@@ -32,8 +32,8 @@ export function updateVenue(venue) {
     })
 }
 
-export function deleteOne(id) {
-    return fetch(`/api/venue${id}`, {
+export function deleteOne(venue) {
+    return fetch(`/api/venue${venue}`, {
         method: 'delete'
     }).then(function (res) {
         return res.json()

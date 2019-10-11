@@ -135,7 +135,7 @@ class CreateVenuePage extends Component {
                     <div className="col-sm-12 text-center">
                         <button className="btn btn-default">Save Venue</button>
                         &nbsp;&nbsp;
-                        <Link to="/">Cancel</Link>
+                        <Link to="/IndexPage">Cancel</Link>
                     </div>
                 </div>
             </form>
