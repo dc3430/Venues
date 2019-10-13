@@ -33,10 +33,11 @@ export function updateVenue(venue) {
 }
 
 export function deleteOne(venue) {
-    return fetch(`/api/venue${venue}`, {
+    return fetch(`/api/venue/${venue}`, {
         method: 'delete'
     }).then(function (res) {
-        return res.json()
+        return true
+        // return res.json()
     });
 }
 

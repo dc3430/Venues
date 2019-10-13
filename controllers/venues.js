@@ -27,9 +27,7 @@ function updateVenue(req, res) {
 }
 
 function deleteOne(req, res) {
-    Venue.findOne({ _id: req.body.venueId, deletedAt: null }).then(function (err, venue) {
-        venue.deletedAt = new Date();
-        venue.save();
+    Venue.deleteOne({ _id: req.params.id }).then(function (err, venue) {
         res.status(200).json(venue);
     });
 }
