@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
-import HomePage from '../../pages/HomePage/HomePage';
-import CreateVenuePage from '../../pages/CreateVenuePage/CreateVenuePage'
 
 const NavBar = (props) => {
   let nav = props.user ?

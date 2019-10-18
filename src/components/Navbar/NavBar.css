@@ -2,30 +2,30 @@
   display: flex;
   justify-content: center;
   /* margin: 0 40px; */
-  background: rgb(0, 0, 0);
+  background: rgb(2, 71, 72);
 }
   
 .NavBar-link {
   margin: 0 10px;
   color: darkorange;
-  background: rgb(0, 0, 0);
+  background: rgb(2, 71, 72);
 }
   
 .NavBar-welcome {
   text-transform: lowercase;
   color: darkorange;
   text-align: center;
-  background: rgb(0, 0, 0);
+  background: rgb(2, 71, 72);
 }
 
 
 
 .NavBar-A {
-  background: rgb(0, 0, 0);
+  background: rgb(2, 71, 72);
 }
 
 .NavBar-B {
-  background: rgb(0, 0, 0);
+  background: rgb(2, 71, 72);
 }
   
 

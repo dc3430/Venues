@@ -36,7 +36,6 @@ class EditVenuePage extends Component {
     };
 
     componentDidMount() {
-        const venueId = this.props.match.params.id;
         const self = this;
 
         getOneVenue(this.props.match.params.id).then(function({
